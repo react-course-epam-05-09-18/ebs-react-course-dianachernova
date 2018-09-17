@@ -28,13 +28,12 @@ export default class Courses extends React.Component {
             placeat sapiente minus dolore ab necessitatibus aliquam magni
             earum neque assumenda accusantium veniam est`
         }];
-        console.log(courses)
-        return courses.map((elem, index) => {
+        return courses.map((course, index) => {
             return (<tr key={index}>
                 <td>
-                    <h3 className="table-course-name">{elem.title}</h3>
-                    <div className='table-course-duration'>{elem.duration}</div>
-                    {elem.description}
+                    <h3 className="table-course-name">{course.title}</h3>
+                    <div className='table-course-duration'>{course.duration}</div>
+                    {course.description}
                 </td>
                 <td><Button className="edit-delete-course-button" type="submit" block>Edit</Button></td>
                 <td><Button className="edit-delete-course-button" type="submit" block>Delete</Button></td>
@@ -46,9 +45,7 @@ export default class Courses extends React.Component {
     render() {
         return (
             <div>
-                <Row style={{
-                    alignItems: "center"
-                }}>
+                <Row className="general-courses-div">
                     <Col sm={{ size: 6, offset: 2 }}>
                         <Form className="search-form">
                             <FormGroup row>
