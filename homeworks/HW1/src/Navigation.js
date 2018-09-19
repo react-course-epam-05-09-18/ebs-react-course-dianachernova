@@ -1,11 +1,12 @@
 import React from 'react'
-import { Route, Link } from "react-router-dom"
-import { Router } from "react-router";
+import {Route, Link, Switch} from "react-router-dom"
+import {Router} from "react-router";
 import createBrowserHistory from "history/createBrowserHistory"
 import Courses from './Courses'
 import Login from './Login'
-import './App.css';
 import CreateCourse from './CreateCourse';
+import ErrorPageNotFound from './page404';
+import './App.css';
 
 const history = createBrowserHistory()
 
@@ -23,18 +24,21 @@ class Navigation extends React.Component {
                         <Link to="/courses"> Courses</Link>
                     </div>
 
-
                     <hr />
+                    <Switch>
+                        <Route exact path="/" component={Login} />
+                        <Route path="/login" component={Login} />
+                        <Route exact path="/courses" component={Courses} />
+                        <Route path="/courses/add" component={CreateCourse} />
+                        <Route path="/courses/:id" component={CreateCourse} />
+                        <Route component={ErrorPageNotFound} />
+                    </Switch>
 
-                    <Route path="/login" component={Login} />
-                    <Route path="/courses" component={Courses} />
-                    <Route path="/create-course" component={CreateCourse}/>
                 </div>
             </Router>
 
         );
     }
 }
-
 
 export default Navigation

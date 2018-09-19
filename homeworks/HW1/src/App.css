@@ -200,3 +200,17 @@
 .general-courses-div{
   align-items: center;
 }
+
+.validation-error-message{
+  color:rgb(231, 13, 13);
+  font-family: 'Gamja Flower', cursive;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.standart-input-field{
+  width: 100%;
+  border-radius: 10px;
+  align-content: center;
+  justify-content: center;
+}
