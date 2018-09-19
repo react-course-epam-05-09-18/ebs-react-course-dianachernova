@@ -2,7 +2,7 @@ import React from 'react';
 import {Input} from 'reactstrap';
 import './App.css';
 
-export default class InputValidatedField extends React.Component {
+export class InputValidatedField extends React.Component {
 
     constructor(props) {
         super(props);
@@ -43,4 +43,3 @@ export default class InputValidatedField extends React.Component {
         );
     }
 }
-

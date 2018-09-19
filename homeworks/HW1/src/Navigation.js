@@ -2,15 +2,16 @@ import React from 'react'
 import {Route, Link, Switch} from "react-router-dom"
 import {Router} from "react-router";
 import createBrowserHistory from "history/createBrowserHistory"
-import Courses from './Courses'
-import Login from './Login'
-import CreateCourse from './CreateCourse';
-import ErrorPageNotFound from './page404';
+import PropTypes from 'prop-types';
+import {Courses} from './Courses'
+import {Login} from './Login'
+import {CreateCourse} from './CreateCourse';
+import {ErrorPageNotFound} from './page404';
 import './App.css';
 
 const history = createBrowserHistory()
 
-class Navigation extends React.Component {
+export class Navigation extends React.Component {
     render() {
         return (
             <Router history={history}>
@@ -41,4 +42,10 @@ class Navigation extends React.Component {
     }
 }
 
-export default Navigation
+Courses.propTypes = {
+    Login: PropTypes.object.isRequired,
+    Courses: PropTypes.object.isRequired,
+    CreateCourse: PropTypes.object.isRequired,
+    ErrorPageNotFound: PropTypes.object.isRequired
+}
+

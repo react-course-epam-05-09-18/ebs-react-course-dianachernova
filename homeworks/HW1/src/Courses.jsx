@@ -1,9 +1,11 @@
 import React from 'react';
 import {Button, Form, FormGroup, Input, Col, Table, Row} from 'reactstrap';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './App.css'
 
-export default class Courses extends React.Component {
+export class Courses extends React.Component {
 
     constructor(props) {
         super(props);
@@ -89,4 +91,8 @@ export default class Courses extends React.Component {
             </div>
         );
     }
+}
+
+Courses.propTypes = {
+    courses: PropTypes.array.isRequired
 }

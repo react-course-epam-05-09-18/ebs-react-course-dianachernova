@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Row, Col, Container, Button } from 'reactstrap'
-import InputValidatedField from './InputValidatedField';
+import {InputValidatedField} from './InputValidatedField';
 import './App.css';
 
-export default class Login extends Component {
+export class Login extends Component {
     render() {
         return (
             <Container>

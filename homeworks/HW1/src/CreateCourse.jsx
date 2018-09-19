@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button, Form, FormGroup, Input, Col, Row, Container, Label} from 'reactstrap';
-import SelectComponent from './SelectComponent';
+import {SelectComponent} from './SelectComponent';
 
-export default class CreateCourse extends React.Component {
+export class CreateCourse extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

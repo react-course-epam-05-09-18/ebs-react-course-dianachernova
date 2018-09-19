@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-export default class ErrorPageNotFound extends Component {
+export class ErrorPageNotFound extends Component {
     render() {
         return (
             <div>
