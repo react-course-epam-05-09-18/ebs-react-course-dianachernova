@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 
 export class SelectComponent extends Component {
-
     render() {
         const listForSelect = this.props.list;
         const onClick = this.props.onClick;
