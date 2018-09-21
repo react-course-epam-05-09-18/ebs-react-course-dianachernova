@@ -6,6 +6,7 @@ import {Courses} from './Courses'
 import {Login} from './Login'
 import {CreateCourse} from './CreateCourse';
 import {ErrorPageNotFound} from './page404';
+import {AuthorizationHOC} from './AuthorizationHOC';
 import './App.css';
 
 const history = createBrowserHistory()
@@ -26,9 +27,9 @@ export class Navigation extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Login} />
                         <Route path="/login" component={Login} />
-                        <Route exact path="/courses" component={Courses} />
-                        <Route path="/courses/add" component={CreateCourse} />
-                        <Route path="/courses/:id" component={CreateCourse} />
+                        <Route exact path="/courses" component={AuthorizationHOC(Courses)} />
+                        <Route path="/courses/add" component={AuthorizationHOC(CreateCourse)} />
+                        <Route path="/courses/:id" component={AuthorizationHOC(CreateCourse)} />
                         <Route component={ErrorPageNotFound} />
                     </Switch>
                 </div>

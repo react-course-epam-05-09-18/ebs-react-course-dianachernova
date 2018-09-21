@@ -18,7 +18,8 @@ export class InputValidatedField extends React.Component {
                 <Input type={this.props.type} name={this.props.name}
                     tabIndex={this.props.tabIndex} className={this.props.className}
                     placeholder={this.props.placeholder}
-                    onBlur={this.validateInput} required />
+                    onBlur={this.validateInput} required 
+                    onChange={this.props.onChange}/>
                 <label className="validation-error-message">{this.state.error ? `${this.state.error}` : ""}</label>
             </div>
         );
