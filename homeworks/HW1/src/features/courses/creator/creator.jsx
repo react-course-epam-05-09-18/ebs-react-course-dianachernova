@@ -1,8 +1,15 @@
 import React from 'react';
-import {Button, Form, FormGroup, Input, Col, Row, Container, Label} from 'reactstrap';
-import {SelectComponent} from './SelectComponent';
-
-export class CreateCourse extends React.Component {
+import {Button, 
+  Form, 
+  FormGroup, 
+  Input, 
+  Col, 
+  Row, 
+  Container, 
+  Label} from 'reactstrap';
+import {Select} from '../../../common/components/select';
+import './creator.css'
+export class CoursesCreator extends React.Component {
     state = {
         authors: [
             {
@@ -27,6 +34,7 @@ export class CreateCourse extends React.Component {
             }
         ]
     }
+
     render() {
         return (
             <Container>
@@ -52,10 +60,8 @@ export class CreateCourse extends React.Component {
                             </FormGroup>
                             <div>
                                 <FormGroup row>
-                                    {/* <SelectComponent list={this.state.authors} name="generalList" onClick={this.markItemAsSelectedOrRemoved} isChosen={false} className='authors-list' /> */}
-                                    <SelectComponent list={this.getNecessaryAuthors(false)} name="generalList" onClick={this.markItemAsSelectedOrRemoved} className='authors-list' />
-                                    {/* <SelectComponent list={this.state.authors} name="selectedList" onClick={this.markItemAsSelectedOrRemoved} isChosen={true} className='authors-list' /> */}
-                                    <SelectComponent list={this.getNecessaryAuthors(true)} name="selectedList" onClick={this.markItemAsSelectedOrRemoved} className='authors-list' />
+                                    <Select list={this.getNecessaryAuthors(false)} name="generalList" onClick={this.markItemAsSelectedOrRemoved} className='authors-list' />
+                                    <Select list={this.getNecessaryAuthors(true)} name="selectedList" onClick={this.markItemAsSelectedOrRemoved} className='authors-list' />
                                 </FormGroup>
                             </div>
                             <FormGroup row>
@@ -82,11 +88,10 @@ export class CreateCourse extends React.Component {
             }
             return acc;
         }, []);
-        console.log();
 
         this.setState({
             authors: authors
-        }, () => console.log(this.state));
+        });
     }
 
     getNecessaryAuthors = (isNecessary) => {
@@ -99,8 +104,7 @@ export class CreateCourse extends React.Component {
             }
             return acc;
         }, []);
-        list.forEach(i => console.log(i.name, ' ', i.isSelected)
-        )
+        
         return list;
     }
 }

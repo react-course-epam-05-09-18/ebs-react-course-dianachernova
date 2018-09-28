@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Row, Col, Container, Button} from 'reactstrap'
-import {InputValidatedField} from './InputValidatedField';
-import './App.css';
+import {InputFieldValidator} from './field-validation';
+import './login.css';
 
 export class Login extends Component {
-
     state = {
         user: '',
         password: ''
@@ -18,11 +17,11 @@ export class Login extends Component {
                         <Form onSubmit = {this.onSubmitForm}>
                             <h1 className="login-phrase">Sign up</h1>
                             <FormGroup row>
-                                <InputValidatedField type="text" name="user" tabIndex="1"
+                                <InputFieldValidator type="text" name="user" tabIndex="1"
                                     className="standart-input-field" placeholder="Username" onChange={this.onChange}/>
                             </FormGroup>
                             <FormGroup row>
-                                <InputValidatedField type="password" name="password" tabIndex="2"
+                                <InputFieldValidator type="password" name="password" tabIndex="2"
                                     className="standart-input-field" placeholder="Password" onChange={this.onChange} />
                             </FormGroup>
                             <FormGroup row>

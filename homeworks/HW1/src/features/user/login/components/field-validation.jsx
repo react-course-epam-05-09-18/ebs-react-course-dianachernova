@@ -1,8 +1,8 @@
 import React from 'react';
 import {Input} from 'reactstrap';
-import './App.css';
+import './field-validation.css';
 
-export class InputValidatedField extends React.Component {
+export class InputFieldValidator extends React.Component {
     constructor(props) {
         super(props);
         const error = '';
