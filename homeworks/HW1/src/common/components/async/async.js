@@ -5,7 +5,7 @@ export function asyncComponent(getComponent) {
         state = { Component: AsyncComponent.Component };
 
         componentWillMount() {
-            if (this.state.Component) {
+            if (!this.state.Component) {
                 getComponent().then(Component => {
                     AsyncComponent.Component = Component
                     this.setState({ Component })

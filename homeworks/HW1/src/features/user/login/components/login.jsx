@@ -4,7 +4,6 @@ import {InputFieldValidator} from './field-validation';
 import './login.css';
 
 export class Login extends Component {
-
     state = {
         user: '',
         password: ''
