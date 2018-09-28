@@ -1,0 +1,53 @@
+.table{
+  margin: 30px 100px;
+  position: relative;
+  width: 50%;
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+.table-course-name {
+  font-family: 'Gamja Flower', cursive;
+  font-style: oblique;
+  font-size: 25px;
+
+}
+
+.table-course-duration {
+  font-family: 'Gamja Flower', cursive;
+  font-size: 25px;
+}
+
+.edit-delete-course-button{
+  background-color: whitesmoke;
+  border: 2px #82ec82;
+  color:rgb(105, 192, 105);
+  border-radius: 10px;
+}
+
+.edit-delete-course-button:hover {
+  background-color: rgb(130, 236, 130); /* Green */
+  color: white;
+}
+
+.search-button{
+  background-color: whitesmoke;
+  border: 2px #82ec82;
+  color:rgb(105, 192, 105);
+  border-radius: 10px;
+  width: 127px;
+}
+
+.search-form{
+  margin-left: 3%;
+  margin-top: 15px;
+}
+
+.search-field{
+ width: 25%;
+ margin-left: 16%;
+}
+
+.general-courses-div{
+  align-items: center;
+}

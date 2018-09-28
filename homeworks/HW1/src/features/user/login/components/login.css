@@ -1,0 +1,37 @@
+.login-form-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-phrase{
+  font-family: 'Gamja Flower', cursive;
+  font-size: 50px;
+  color: black;
+  position: relative;
+  text-align: center;
+}
+
+.standart-input-field{
+  width: 100%;
+  border-radius: 10px;
+  align-content: center;
+  justify-content: center;
+}
+
+.login-button{
+  background-color: whitesmoke;
+  border: 2px dashed #82ec82;
+  color:rgb(105, 192, 105);
+  border-radius: 10px;
+}
+.login-button:hover {
+  background-color: rgb(130, 236, 130); /* Green */
+  color: white;
+}
+
+.login-form-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
