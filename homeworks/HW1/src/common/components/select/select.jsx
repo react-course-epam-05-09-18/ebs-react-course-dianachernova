@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-export class Select extends Component {
+export class 
+Select extends Component {
     static get propTypes() {
         return {
             name: PropTypes.string.isRequired,

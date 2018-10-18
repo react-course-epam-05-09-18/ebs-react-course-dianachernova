@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../../src/App.css';
+import './page404.css';
 
 export class ErrorPageNotFound extends Component {
     render() {
