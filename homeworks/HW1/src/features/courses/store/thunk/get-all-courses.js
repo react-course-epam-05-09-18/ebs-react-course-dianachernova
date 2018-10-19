@@ -1,7 +1,6 @@
 import {getAllCourses} from '../actions';
-// import {dispatch} from 'react-redux';
 import {createCourse} from '../../../../core/entities';
-export const getCourses = () =>async (dispatch, getState)=> {
+export const getCourses = () => async (dispatch)=> {
   const courses = [
     createCourse({
       title: "React Redux",

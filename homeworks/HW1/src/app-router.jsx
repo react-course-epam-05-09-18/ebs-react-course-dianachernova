@@ -2,8 +2,6 @@ import React from 'react'
 import {Route, Link, Switch} from "react-router-dom"
 import {Router} from "react-router";
 import createBrowserHistory from 'history/createBrowserHistory';
-import {Provider} from 'react-through';
-import {NavLink} from 'react-router-dom';
 
 import {asyncComponent} from './common/components'
 
@@ -31,7 +29,6 @@ export class AppRouter extends React.Component {
 
     render() {
         return (
-            // <Provider>
 
                 <Router history={history}>
                     <div>
@@ -57,7 +54,6 @@ export class AppRouter extends React.Component {
                         </Switch>
                     </div>
                 </Router>
-            // </Provider>
         );
     }
 }

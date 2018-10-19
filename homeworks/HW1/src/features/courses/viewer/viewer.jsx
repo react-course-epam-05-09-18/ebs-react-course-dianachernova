@@ -11,7 +11,8 @@ import {
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {createCourse} from '../../../core/entities/course';
-import {getAllCourses} from '../store';
+ import {dispatch} from 'react-redux';
+ import {getCourses} from '../store';
 import './viewer.css'
 
  class CoursesViewerPage extends React.Component {
@@ -19,15 +20,9 @@ import './viewer.css'
     courses: []
   }
 
-  // componentWillMount() {
-  //   const courses = this.getCourses();
-  //   this.setState({
-  //     courses: courses
-  //   });
-  // }
 
   componentDidMount() {
-    this.props.getAllCourses();
+    this.props.getCourses();
   }
 
   render() {
@@ -60,10 +55,6 @@ import './viewer.css'
     );
   }
 
-  // getCourses = () => {
-
-  // }
-
   renderCourses = () => {
     const {
       courses
@@ -87,4 +78,4 @@ const mapStateToProps = (state, ownProps) => ({
   courses: state.courses,
 })
 
-export const CoursesViewer = connect(mapStateToProps, {getAllCourses})(CoursesViewerPage);
+export const CoursesViewer = connect(mapStateToProps, {getCourses})(CoursesViewerPage);
