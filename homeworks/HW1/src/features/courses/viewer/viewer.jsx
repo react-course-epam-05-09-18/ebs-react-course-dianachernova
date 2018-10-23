@@ -1,26 +1,28 @@
 import React from 'react';
-import {Button, 
-  Form, 
-  FormGroup, 
-  Input, 
-  Col, 
-  Table, 
+import {connect} from 'react-redux';
+import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Col,
+  Table,
   Row
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
-import {createCourse} from '../../../core/entities/course'
+import {createCourse} from '../../../core/entities/course';
+ import {dispatch} from 'react-redux';
+ import {getCourses} from '../store';
 import './viewer.css'
 
-export class CoursesViewer extends React.Component {
+ class CoursesViewerPage extends React.Component {
   state = {
     courses: []
   }
 
-  componentWillMount() {
-    const courses = this.getCourses();
-    this.setState({
-      courses: courses
-    });
+
+  componentDidMount() {
+    this.props.getCourses();
   }
 
   render() {
@@ -53,35 +55,11 @@ export class CoursesViewer extends React.Component {
     );
   }
 
-  getCourses = () => {
-    return [createCourse({
-      title: "React Redux",
-      duration: "16h",
-      description: `Adipisicing elit.
-                Harum pariatur porro quam est exercitationem rem ut corrupti
-                tempore! Mollitia ad similique dolore voluptas.
-                Corrupti saepe placeat blanditiis aliquam totam sed?`
-    }),
-    createCourse({
-      title: "Node.js",
-      duration: "12h",
-      description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Nemo ratione enim laudantium aspernatur, cupiditate quis
-                placeat sapiente minus dolore ab necessitatibus aliquam magni
-                earum neque assumenda accusantium veniam est voluptatibus`
-    }),
-    createCourse({
-      title: "Ajax",
-      duration: "6h",
-      description: `Nemo ratione enim laudantium aspernatur, cupiditate quis
-                placeat sapiente minus dolore ab necessitatibus aliquam magni
-                earum neque assumenda accusantium veniam est`
-    })];
-  }
-
   renderCourses = () => {
-    const courses = this.state.courses;
-    
+    const {
+      courses
+    } = this.props;
+
     return courses.map((course, index) => {
       return (<tr key={index}>
         <td>
@@ -95,3 +73,9 @@ export class CoursesViewer extends React.Component {
     });
   }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+  courses: state.courses,
+})
+
+export const CoursesViewer = connect(mapStateToProps, {getCourses})(CoursesViewerPage);
